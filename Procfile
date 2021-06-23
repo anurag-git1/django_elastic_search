@@ -1,0 +1,1 @@
+web: gunicorn Django_Elastic_Search.wsgi:application --log-file -
