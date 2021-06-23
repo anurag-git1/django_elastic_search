@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-c$k582a5ms+_^kix7hrd8w1fr^y5&b*kx##(o@q2i=^q6+z(m-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["elastic-search-production.herokuapp.com",'localhost']
+ALLOWED_HOSTS = ["django-elastic.herokuapp.com",'localhost']
 
 
 # Application definition
