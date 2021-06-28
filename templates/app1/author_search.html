@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search list</title>
+</head>
+<body>
+    <form>
+        <input id="q" name="q" type="text" placeholder="your search">
+    </form>
+    {% for auth in post %}
+        
+        {{auth.first_name}}
+        {{auth.last_name}}
+        {{auth.email}}
+        
+        <br>
+       
+    {% endfor %}
+</body>
+</html>
