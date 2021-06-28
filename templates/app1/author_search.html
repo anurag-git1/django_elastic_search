@@ -10,14 +10,11 @@
     <form>
         <input id="q" name="q" type="text" placeholder="your search">
     </form>
-    {% for auth in post %}
-        
+    {% for auth in post %} 
         {{auth.first_name}}
         {{auth.last_name}}
-        {{auth.email}}
-        
-        <br>
-       
+        {{auth.email}} 
+        <br>  
     {% endfor %}
 </body>
 </html>
