@@ -14,21 +14,15 @@ def geeks_view(request):
     # return response
     return HttpResponse(html)
 
-def check(request):
+def search_authors(request):
     q = request.GET.get("q")
+    print("qqqqqqqqqq",q)
     if q:
-        post = AuthorDocument.search().query("match", first_name=q)
-        
+        post = AuthorDocument.search().query("multi_match", query=q, fields=['first_name', 'last_name'])  
     else:
         post = ""
     return render(request, 'app1/author_search.html',{"post":post})
-    # obj = AuthorDocument.search().query("match", first_name="Anurag")
-    # print("first name",obj)
-    # for auth in obj:
-    #     print(
-    #         "Author name : {}".format(auth)
-    #     )
-    # return HttpResponse(auth)
+
 
 
 def show_authors(request):
