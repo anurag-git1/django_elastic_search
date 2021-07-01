@@ -21,4 +21,3 @@ class AuthorDocument(Document):
             'last_name',
             'email',
         ]
-        # related_models = [Book]

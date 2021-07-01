@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Authors List</title>
+  	<title> About Book</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> -->
@@ -9,14 +9,11 @@
 	<!--<link rel="stylesheet" href="css/style.css">-->
 	</head>
 	<body>
-		<form>
-			<input id="q" name="q" type="text" placeholder="your search">
-		</form>
 		<section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-6 text-center mb-5">
-						<h2 class="heading-section">Authors List</h2>
+						<h2 class="heading-section">About Book</h2>
 					</div>
 				</div>  
 				<div class="row">  
@@ -25,22 +22,22 @@
 							<table class="table">
 							<thead class="thead-primary">
 								<tr>
-								<th>#</th>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Email Address</th>
+                                    <th>#</th>
+                                    <th>Book Title</th>
+                                    <th>Author</th>
+                                    <th>Publisher</th>
 								</tr>
 							</thead>
-							{% for auth in auth %}
+							
 								<tbody>
 									<tr>
 									<th scope="row">{{auth.id}}</th>
-									<td>{{auth.first_name}}</td>
-									<td>{{auth.last_name}}</td>
-									<td>{{auth.email}}</td>
+									<td>{{auth.title}}</td>
+									<td>{{ab}}</td>
+									<td>{{auth.publisher}}</td>
 									</tr>
 								</tbody>
-							{% endfor %}
+							
 
 							</table>
 						</div>                   
