@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Recipes</title>
+</head>
+<body>
+{% for recipe in authors %}
+  <h1>{{ recipe.name }}</h1>
+    <p>{{ recipe.desc }}</p>
+  <h2>Ingredients</h2>
+  <ul>
+    {% for ingredient in recipe.ingredient_set.all %}
+    <li>{{ ingredient.desc }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Instructions</h2>
+    <p>{{ recipe.instructions }}</p>
+{% endfor %}
+</body>
+</html>
