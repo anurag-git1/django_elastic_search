@@ -53,6 +53,7 @@ def book_author_publisher_list(request):
 
 
 from app1.services import get_authors
+
 def authors_view_redis(self,request):
     return render(request, "app1/author_redis_list.html", {"authors" : get_authors()})
 
