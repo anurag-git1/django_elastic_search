@@ -4,6 +4,12 @@ from .documents import AuthorDocument
 from .models import Author,Book,Publisher
 # get datetime
 import datetime
+from django.conf import settings
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.views.decorators.cache import cache_page
+from app1.services import get_books
+
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
  
 def geeks_view(request):
     # fetch date and time
@@ -52,8 +58,8 @@ def book_author_publisher_list(request):
     return render(request, "app1/book_auth_pub.html",context)
 
 
-from app1.services import get_authors
 
-def authors_view_redis(self,request):
-    return render(request, "app1/author_redis_list.html", {"authors" : get_authors()})
+@cache_page(CACHE_TTL)
+def authors_view_redis(request):
+    return render(request, "app1/author_redis_list.html", {"books" : get_books()})
 
