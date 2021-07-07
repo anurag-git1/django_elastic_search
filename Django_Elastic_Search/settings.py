@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_elasticsearch_dsl',
     'django_elasticsearch_dsl_drf',
-    'debug_toolbar',
+    #'debug_toolbar',
 
 ]
 ELASTICSEARCH_DSL = {
