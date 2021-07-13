@@ -17,4 +17,3 @@ Simple project to test Elasticsearch with Django.
 Steps to build, load data from fixtures and run project:
 
 cd to root of project
-
