@@ -1,0 +1,7 @@
+GET http://localhost:8000/redis_search/ http/1.1
+
+
+
+
+
+

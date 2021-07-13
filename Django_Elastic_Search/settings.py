@@ -46,12 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
     'app1',
+    'redis_app2',
     'rest_framework',
     'django_elasticsearch_dsl',
     'django_elasticsearch_dsl_drf',
-    'debug_toolbar',
-
 ]
+
 ELASTICSEARCH_DSL = {
     'default': {
         'hosts': 'localhost:9200'
