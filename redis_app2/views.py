@@ -31,3 +31,14 @@ def home(request):
 
     context = {'recipe': recipe}  
     return render(request, "redis_app2/home.html", context)
+
+def show(request , id):
+    if cache.get(id):
+        print("DATA COMING FROM CACHE")
+        recipe = cache.get(id)
+    else:
+        print("DATA COMING FROM DB")
+        recipe = Recipe.objects.get(id = id)
+        cache.set(id , recipe)
+    context = {'recipe' : recipe}
+    return render(request, 'redis_app2/show.html' , context)
