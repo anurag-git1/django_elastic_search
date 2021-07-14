@@ -8,14 +8,14 @@
 </head>
 <body>
     <form>
-        <input id="q" name="q" type="text" placeholder="your search">
+        <input id="qn" name="q" type="text" placeholder="your search" required>
+        <button>Search</button>
     </form>
-
     {% for auth in post %} 
-
+        {{auth.title}}
         {{auth.first_name}}
         {{auth.last_name}}
-        {{auth.email}} 
+        {{auth.email}}
         
         <br>  
 
