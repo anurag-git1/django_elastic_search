@@ -24,7 +24,7 @@ def geeks_view(request):
 def search_authors(request):
     """A dummy docstring."""
     q_nam = request.GET.get("q_name")
-    print("qqqqqqqqqq",q_nam)
+    print("qqqq",q_nam)
     if q_nam:
         post = AuthorDocument.search().query(
             "multi_match",
