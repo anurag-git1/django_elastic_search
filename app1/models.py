@@ -1,6 +1,8 @@
+"""
+high level support for doing this and that.
+"""
 from django.db import models
 
-# Create your models here.
 class Publisher(models.Model):
     name = models.CharField(max_length=30)
     address = models.CharField(max_length=50)
@@ -8,11 +10,11 @@ class Publisher(models.Model):
     country = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name
-    
+        return '{}'.format(self.name)
+        # return self.name
+
     class Meta:
         ordering = ['name']
-    
 
 class Author(models.Model):
     first_name = models.CharField(max_length=30)
@@ -29,4 +31,5 @@ class Book(models.Model):
     publication_date = models.DateField()
 
     def __str__(self):
-        return self.title
+        return '{}'.format(self.title)
+        # return self.title

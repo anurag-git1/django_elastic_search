@@ -1,12 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .documents import AuthorDocument,BookDocument
-from .models import Author
+"""
+high level support for doing this and that.
+"""
 # get datetime
 import datetime
-# from django.core.paginator import Paginator
 # combine two or more querysets in a Django view
 from itertools import chain
+from django.shortcuts import render
+from django.http import HttpResponse
+# from django.core.paginator import Paginator
+from app1.documents import AuthorDocument,BookDocument
+from app1.models import Author
 
 # create a function
 def geeks_view(request):
@@ -18,29 +21,40 @@ def geeks_view(request):
     return HttpResponse(html)
 
 def search_authors(request):
-    q = request.GET.get("q")
+    # Triple quotes are used while writing docstrings
+    """
+    Search Authors in elastic search
+    """
+    quer = request.GET.get("q")
 
-    if q:
-        post = AuthorDocument.search().query("multi_match", query=q, fields=['first_name', 'last_name']).to_queryset()  
-        post_extra = BookDocument.search().query("multi_match", query=q, fields=['title','authors','publisher']).to_queryset()
-        qs = list(
+    if quer:
+        post = AuthorDocument.search().query(
+            "multi_match",
+            query=quer,
+            fields=['first_name', 'last_name']).to_queryset()
+        post_extra = BookDocument.search().query(
+            "multi_match",
+            query=quer,
+            fields=['title','authors','publisher']).to_queryset()
+        combine_two_query = list(
             sorted(
                 chain(post, post_extra),
                 key=lambda post: post.pk
             ))
-        print("qs123",qs)
-        
+        print("qs123",combine_two_query)
+
     else:
-        qs = ""
+        combine_two_query = ""
     # paginator = Paginator(q, 10)
-    return render(request, 'app1/author_search.html',{"post":qs})
+    return render(request, 'app1/author_search.html',{"post":combine_two_query})
+print("docstring",search_authors.__doc__)
 
 
 
 def show_authors(request):
     auth = Author.objects.all()
-    for au in auth:
-        print("all author",au.last_name)
+    for auht in auth:
+        print("all author",auht.last_name)
     context = {
         "auth"  : auth,
     }
