@@ -13,7 +13,7 @@ from app1.models import Author
 
 # create a function
 def geeks_view(request):
-    # fetch date and time
+    """fetch date and time"""
     now = datetime.datetime.now()
     # convert to string
     html = "Time is {}".format(now)
@@ -52,6 +52,9 @@ print("docstring",search_authors.__doc__)
 
 
 def show_authors(request):
+    """
+    show all authors
+    """
     auth = Author.objects.all()
     for auht in auth:
         print("all author",auht.last_name)
