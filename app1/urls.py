@@ -1,5 +1,7 @@
-from django.contrib import admin
-from django.urls import path, include
+"""
+high level support for doing this and that.
+"""
+from django.urls import path
 from app1 import views
 
 urlpatterns = [
