@@ -60,8 +60,8 @@ ELASTICSEARCH_DSL = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-         "LOCATION": "redis://127.0.0.1:6379/1",
-#           "LOCATION": "redis://ca5b32f0c3bb.ngrok.io/1",
+         #"LOCATION": "redis://127.0.0.1:6379/1",
+         "LOCATION": "https://ca5b32f0c3bb.ngrok.io/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
