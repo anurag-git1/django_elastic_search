@@ -30,7 +30,7 @@ TEMPLATE_DIR = BASE_DIR/'templates'
 # SECRET_KEY = 'django-insecure-c$k582a5ms+_^kix7hrd8w1fr^y5&b*kx##(o@q2i=^q6+z(m-'
 SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["django-elastic.herokuapp.com",'localhost','16ef2d12698b.ngrok.io']
 
