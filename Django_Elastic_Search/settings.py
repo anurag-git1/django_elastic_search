@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["django-elastic.herokuapp.com",'localhost','0dd591214735.ngrok.io']
+ALLOWED_HOSTS = ["django-elastic.herokuapp.com",'localhost','16ef2d12698b.ngrok.io']
 
 
 # Application definition
