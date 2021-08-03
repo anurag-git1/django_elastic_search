@@ -4,22 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <script src="{% static 'app.js' %}"></script> 
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Search list</title>
 </head>
 <body>
-    <form>
+    {% comment %} <form>
         <input id="qn" name="q" type="text" placeholder="your search" required>
         <button>Search</button>
-    </form>
-    {% for auth in post %} 
-        {{auth.title}}
-        {{auth.first_name}}
-        {{auth.last_name}}
-        {{auth.email}}
-        
-        <br>  
+    </form> {% endcomment %}
 
-    {% endfor %}
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            <img src="/static/elastic_logo.png" alt="e" width="30" height="24" class="d-inline-block align-text-top">
+            <span style="color: green">Elastic Search</span>
+            </a>
+             <form method ="get" class="d-flex">
+                <input class="form-control me-2" id="q" name="q" name="recipe" type="search" placeholder="Search" aria-label="Search" required>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auth in post %}
+            <tr>
+            <th scope="row" class="counterCell"></th>
+            <td>{{auth.first_name}}</td>
+            <td>{{auth.last_name}}</td>
+            <td>{{auth.email}}</td>
+            </tr>
+        {% endfor %}
+           
+        </tbody>
+    </table>
+    <footer class="bg-dark p-2 mt-5">
+        <p class="text-center text-white">Django Elastic</p>
+    </footer>
 
 </body>
 </html>

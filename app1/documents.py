@@ -15,7 +15,6 @@ post = Index('book')
 class AuthorDocument(Document):
     class Django:
         model = Author
-
         fields = [
             'first_name',
             'last_name',

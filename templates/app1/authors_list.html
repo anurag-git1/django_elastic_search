@@ -1,53 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<title>Authors List</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> -->
-	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-	<!--<link rel="stylesheet" href="css/style.css">-->
-	</head>
-	<body>
-		<form>
-			<input id="q_name" name="q_name" type="text" placeholder="your search">
-		</form>
-		<section class="ftco-section">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-6 text-center mb-5">
-						<h2 class="heading-section">Authors List</h2>
-					</div>
-				</div>  
-				<div class="row">  
-					<div class="col-md-12">                
-						<div class="table-wrap">
-							<table class="table">
-							<thead class="thead-primary">
-								<tr>
-								<th>#</th>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>Email Address</th>
-								</tr>
-							</thead>
-							{% for auth in auth %}
-								<tbody>
-									<tr>
-									<th scope="row">{{auth.id}}</th>
-									<td>{{auth.first_name}}</td>
-									<td>{{auth.last_name}}</td>
-									<td>{{auth.email}}</td>
-									</tr>
-								</tbody>
-							{% endfor %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <script src="{% static 'app.js' %}"></script> 
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Search list</title>
+</head>
+<body>
+    {% comment %} <form>
+        <input id="qn" name="q" type="text" placeholder="your search" required>
+        <button>Search</button>
+    </form> {% endcomment %}
 
-							</table>
-						</div>                   
-					</div>                
-				</div>
-			</div>
-		</section>
-  <!--<script src="js/main.js"></script>-->
-	</body>
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            <img src="/static/elastic_logo.png" alt="e" width="30" height="24" class="d-inline-block align-text-top">
+            <span style="color: green">Elastic Search</span>
+            </a>
+             <form method ="get" class="d-flex">
+                <input class="form-control me-2" id="q_nam" name="q_name" name="recipe" type="search" placeholder="Search" aria-label="Search" required>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for auth in auth %}
+            <tr>
+            <th scope="row" class="counterCell"></th>
+            <td>{{auth.first_name}}</td>
+            <td>{{auth.last_name}}</td>
+            <td>{{auth.email}}</td>
+            </tr>
+        {% endfor %}
+           
+        </tbody>
+    </table>
+    <footer class="bg-dark p-2 mt-5">
+        <p class="text-center text-white">Django Elastic</p>
+    </footer>
+
+</body>
 </html>

@@ -9,7 +9,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # from django.core.paginator import Paginator
 from app1.documents import AuthorDocument,BookDocument
-from app1.models import Author
+from app1.models import Author,Book
 
 # create a function
 def geeks_view(request):
@@ -74,7 +74,7 @@ def book_author_publisher_list(request):
     book_list = book_list + list(book.authors.all())
     context = {
         "auth" : book,
-        "ab"   : book_list,
+        "ab"   : book_list[0],
     }
     return render(request, "app1/book_auth_pub.html",context)
 
