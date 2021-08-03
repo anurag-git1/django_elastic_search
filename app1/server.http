@@ -1,4 +1,4 @@
-GET http://localhost:8000/redis_search/ http/1.1
+GET http://localhost:8000/elastic_search/ http/1.1
 
 
 

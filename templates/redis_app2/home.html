@@ -8,16 +8,18 @@
 </head>
 <body>
 
-    <div class="container mt-5">
-        <form method="get">
-        <div class="mx-auto text-center d-flex ">
-            <input class="form-control" name="recipe" placeholder="Search" style="width:400px">
-            <button class="btn btn-primary">Search</button>
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+            <img src="../static/redis_logo.jpg" alt="redis" width="30" height="24" class="d-inline-block align-text-top">
+            <span style="color: green">Redis Search</span>
+            </a>
+             <form method ="get" class="d-flex">
+                <input class="form-control me-2" name="recipe" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-        </form>
-
-    </div>
-    
+    </nav>
    
     <div class="container mt-5">
         {% if recipe %}
