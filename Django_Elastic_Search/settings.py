@@ -32,7 +32,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ["django-elastic.herokuapp.com",'localhost','9b2901292d42.ngrok.io']
+=======
+ALLOWED_HOSTS = ["django-elastic.herokuapp.com",'localhost','46836b7cab10.ngrok.io']
+>>>>>>> 714df491dba840ba586759e8594fe757f2e41a78
 
 
 # Application definition
@@ -61,8 +65,13 @@ ELASTICSEARCH_DSL = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
+<<<<<<< HEAD
         "LOCATION": "redis://127.0.0.1:6379/1",
         # "LOCATION" : 'redis://5fc19d3f89d6.ngrok.io/1',
+=======
+         #"LOCATION": "redis://127.0.0.1:6379/1",
+         "LOCATION": "redis://46836b7cab10.ngrok.io/1",
+>>>>>>> 714df491dba840ba586759e8594fe757f2e41a78
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
